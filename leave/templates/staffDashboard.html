@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    
+<h2 style="text-align: center;">Staff Dashboard</h2>
+
+<div class="main-container">
+
+    <!-- Left pane. Side menu -->
+    <div class="left-pane">
+
+        <ul style="display:inline-flex; flex-direction: column;">
+            <a href="{% url 'staffDashboard' %}" style="text-decoration: none;"><h3>Leaves</h3></a>
+            <a href="{% url 'approved_leaves' %}" style="text-decoration: none;"><h3>Approved</h3></a>
+            <a href="{% url 'pending_leaves' %}" style="text-decoration: none;"><h3>Rejected</h3></a>
+            <a href="{% url 'pending_leaves' %}" style="text-decoration: none;"><h3>Pending</h3></a>
+        </ul>
+
+    </div>
+
+    <!-- Right pane. Info area -->
+    <div class="right-pane">
+        <br> <br>
+                    
+        <table style="text-align: center; position: relative; left: 250px;">
+            <tr>
+                <td><b>LEAVE</b></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><b>CREATED</b></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><b>STATUS</b></td>
+            </tr>
+
+            {% for leave in leaves %}
+            <tr>
+                <td>{{leave}}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{leave.created}}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                {% if leave.status %}
+                <td>✅</td>
+                {% else %}
+                <td>🔴</td>
+                {% endif %}
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a href="{% url 'view_leave' leave.id %}" style="text-decoration: none;"><b>View</b></a></td>
+                <tr>
+                    <td><hr></td>
+                </tr> 
+            </tr>
+            
+            {% endfor %}
+            
+        </table>
+        
+            
+                          
+    </div>
+
+</div>
+
+    
+{% endblock content %}
+
+
+    

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Management System</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+
+    <h1>
+        {% if request.user.is_authenticated %}
+        <a href="" style="text-decoration: none;">Leave Management System</a>
+        {% endif %}
+    </h1> 
+    {% if request.user.is_authenticated %}
+    <p>
+        Hello, {{request.user|capfirst}}
+        <a href="{% url 'logout' %}" style="text-decoration: none;">Logout</a> - 
+        <a href="{% url 'new_leave' %}" style="text-decoration: none;">Request New Leave</a> - 
+        <a href="" style="text-decoration: none;">Leave History</a>
+    </p>    
+    {% else %}
+    <p>
+        <a href="{% url 'register' %}" style="text-decoration: none;">Register</a>-
+        <a href="{% url 'login' %}" style="text-decoration: none;">Login</a>
+    </p>
+    {% endif %}
+            
+    <hr>
+    
+    {% block content %}
+        
+    {% endblock content %}
+        
+    
+</body>
+</html>

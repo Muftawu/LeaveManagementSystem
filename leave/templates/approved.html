@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<a href="{% url 'staffDashboard' %}">Go Back</a>
+
+<center>
+    <h2>Approved Leaves ✅</h2>
+
+    
+    {% for aleave in approved_leaves %}
+        {{aleave}} <br> <br>
+    {% endfor %}
+        
+</center>
+    
+{% endblock content %}
+
+
+    

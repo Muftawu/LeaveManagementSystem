@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<a href="{% url 'staffDashboard' %}">Go Back</a>
+
+<center>
+    <h2>Pending Leaves 🔴</h2>
+
+    
+    {% for pleave in pending_leaves %}
+        {{pleave}} <br> <br>
+    {% endfor %}
+        
+</center>
+    
+{% endblock content %}
+
+
+    

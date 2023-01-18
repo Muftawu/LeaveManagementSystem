@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<a href="{% url 'staffDashboard' %}">Go Back</a>
+
+<center>
+    <h3>Leave Details for: {{leave}}</h3>
+
+    <table>
+        <tr>
+            <td>Staff Name</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{request.user.staff|capfirst}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            
+        </tr>
+        <tr>
+            <td>Staff Photo</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td style="height: 100px; width: 100px; border-radius: 50%;"><img src="{{leave.photo.url}}" alt=""></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Leave name</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{leave|capfirst}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Created</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{leave.created}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Leave Description</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{leave.description}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Leave Status</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            {% if leave.status %}
+            <td>✅</td>
+            {% else %}
+            <td>🔴</td>
+            {% endif %}
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+</center>
+{% endblock content %}
+    
