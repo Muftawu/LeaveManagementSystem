@@ -50,7 +50,7 @@ JAZZMIN_UI_TWEAKS = {
     'theme': 'darkly',
 }
 
-CSRF_TRUSTED_ORIGINS = ['http://web-production-2efe.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-2efe.up.railway.app']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
