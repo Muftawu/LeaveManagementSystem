@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-*ax7z*r23g^!wu08dm%lqa0kzc8-k-l3)ma*-gv^e#8kwyqc3@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost', 'web-production-2efe.up.railway.app']
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
@@ -50,7 +50,7 @@ JAZZMIN_UI_TWEAKS = {
     'theme': 'darkly',
 }
 
-CSRF_TRUSTED_ORIGINS = []
+CSRF_TRUSTED_ORIGINS = ['http://web-production-2efe.up.railway.app']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
